@@ -136,20 +136,21 @@ export default function Home() {
                 data-testid="hero-headline"
               >
                 <span className="snj-mask">
-                  <motion.span variants={heroLine} className="block text-[58px] sm:text-[84px] lg:text-[104px]">
-                    Swastha
-                  </motion.span>
-                </span>
-                <span className="snj-mask">
                   <motion.span
                     variants={heroLine}
-                    className="block text-[58px] sm:text-[84px] lg:text-[104px]"
-                    style={{ color: "#e7d9a8" }}
+                    className="block whitespace-nowrap text-[40px] sm:text-[64px] lg:text-[84px]"
                   >
-                    NavJeevan
+                    Swastha <span style={{ color: "#e7d9a8" }}>NavJeevan</span>
                   </motion.span>
                 </span>
               </h1>
+
+              <motion.p
+                variants={fadeIn}
+                className="mt-4 font-serif text-[20px] italic tracking-wide text-[#e7d9a8] sm:text-[24px]"
+              >
+                Healthy New Life
+              </motion.p>
 
               <motion.p
                 variants={fadeIn}
@@ -174,8 +175,8 @@ export default function Home() {
               </motion.div>
             </motion.div>
 
-            <motion.div
-              className="lg:col-span-6"
+         <motion.div
+              className="lg:col-span-6 lg:-mt-10"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
@@ -186,7 +187,7 @@ export default function Home() {
                   Eight Dimensions. One Whole Person
                 </div>
               </div>
-              <div className="mt-8">
+              <div className="mt-6">
                 <SNJWheel />
               </div>
             </motion.div>
