@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(rm -rf \"c:\\\\Shubhasmita\\\\Swastha-NavJeevan\\\\Project\\\\node_modules\\\\.vite\")",
+      "Bash(npm install *)",
+      "Bash(mkdir -p \"c:\\\\Shubhasmita\\\\Swastha-NavJeevan\\\\Project\\\\public\\\\locales\\\\en\" \"c:\\\\Shubhasmita\\\\Swastha-NavJeevan\\\\Project\\\\public\\\\locales\\\\hi\" \"c:\\\\Shubhasmita\\\\Swastha-NavJeevan\\\\Project\\\\public\\\\locales\\\\mr\" \"c:\\\\Shubhasmita\\\\Swastha-NavJeevan\\\\Project\\\\public\\\\locales\\\\bn\" \"c:\\\\Shubhasmita\\\\Swastha-NavJeevan\\\\Project\\\\public\\\\locales\\\\kn\" \"c:\\\\Shubhasmita\\\\Swastha-NavJeevan\\\\Project\\\\public\\\\locales\\\\ta\" \"c:\\\\Shubhasmita\\\\Swastha-NavJeevan\\\\Project\\\\public\\\\locales\\\\te\" \"c:\\\\Shubhasmita\\\\Swastha-NavJeevan\\\\Project\\\\public\\\\locales\\\\es\" \"c:\\\\Shubhasmita\\\\Swastha-NavJeevan\\\\Project\\\\public\\\\locales\\\\de\" \"c:\\\\Shubhasmita\\\\Swastha-NavJeevan\\\\Project\\\\public\\\\locales\\\\fr\" \"c:\\\\Shubhasmita\\\\Swastha-NavJeevan\\\\Project\\\\public\\\\locales\\\\ru\")"
+    ],
+    "additionalDirectories": [
+      "c:\\Shubhasmita\\Swastha-NavJeevan\\Project\\node_modules\\.vite",
+      "c:\\Shubhasmita\\Swastha-NavJeevan\\Project\\public\\locales"
+    ]
+  }
+}

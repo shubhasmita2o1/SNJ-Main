@@ -1,0 +1,405 @@
+@import url("https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --snj-bg: #ffffff;
+  --snj-fg: #000000;
+  --snj-fg-2: #6f6f6f;
+  --snj-accent: rgba(0, 0, 0, 0.06);
+
+  --background: 0 0% 100%;
+  --foreground: 0 0% 3.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 3.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 0 0% 3.9%;
+  --primary: 0 0% 9%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 96.1%;
+  --secondary-foreground: 0 0% 9%;
+  --muted: 0 0% 96.1%;
+  --muted-foreground: 0 0% 45.1%;
+  --accent: 0 0% 96.1%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 89.8%;
+  --input: 0 0% 89.8%;
+  --ring: 0 0% 3.9%;
+  --radius: 0.5rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--snj-bg);
+  color: var(--snj-fg);
+  font-family:
+    "Inter",
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #000;
+  color: #fff;
+}
+
+.font-serif {
+  font-family: "Instrument Serif", "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.font-sans {
+  font-family: "Inter", sans-serif;
+}
+
+/* ===== Ken Burns — slow cinematic zoom on hero video ===== */
+@keyframes kenBurns {
+  from { transform: scale(1); }
+  to   { transform: scale(1.06); }
+}
+
+/* ===== Motion ===== */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeOnly {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(24px) scale(0.98);
+  transition:
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+.fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Strong variant — for section headings: includes blur for cinematic reveal */
+.fade-up-strong {
+  opacity: 0;
+  transform: translateY(32px) scale(0.97);
+  filter: blur(8px);
+  transition:
+    opacity 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1100ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1100ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, filter;
+}
+.fade-up-strong.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0px);
+}
+.fade-up-strong.fade-up-delay-1 { transition-delay: 120ms; }
+.fade-up-strong.fade-up-delay-2 { transition-delay: 240ms; }
+
+.fade-up-delay-1 {
+  transition-delay: 120ms;
+}
+.fade-up-delay-2 {
+  transition-delay: 240ms;
+}
+.fade-up-delay-3 {
+  transition-delay: 360ms;
+}
+.fade-up-delay-4 {
+  transition-delay: 480ms;
+}
+
+.fade-down {
+  animation: fadeDown 800ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.fade-in {
+  animation: fadeOnly 1200ms ease-out both;
+}
+
+/* ===== Glass nav ===== */
+.glass-nav {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+.glass-nav-scrolled {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: saturate(180%) blur(28px);
+  -webkit-backdrop-filter: saturate(180%) blur(28px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05), 0 8px 32px rgba(0, 0, 0, 0.06);
+}
+
+/* ===== CTA pill ===== */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #000;
+  color: #fff;
+  padding: 0.95rem 1.85rem;
+  border-radius: 9999px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 0.95rem;
+  letter-spacing: -0.005em;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 500ms ease;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+}
+.btn-pill:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
+}
+.btn-pill-sm {
+  padding: 0.6rem 1.2rem;
+  font-size: 0.85rem;
+}
+.btn-ghost {
+  background: transparent;
+  color: #000;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+}
+.btn-ghost:hover {
+  background: rgba(0, 0, 0, 0.04);
+}
+
+/* ===== Cards ===== */
+.snj-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 18px;
+  transition:
+    transform 600ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 600ms ease,
+    border-color 400ms ease;
+}
+.snj-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Hero overlay ===== */
+.hero-overlay {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.05) 28%,
+      rgba(255, 255, 255, 0.25) 60%,
+      rgba(255, 255, 255, 0.85) 88%,
+      rgba(255, 255, 255, 1) 100%
+    );
+}
+.hero-vignette {
+  background: radial-gradient(
+    ellipse at center,
+    rgba(0, 0, 0, 0) 40%,
+    rgba(0, 0, 0, 0.18) 100%
+  );
+}
+
+/* Marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee {
+  animation: marquee 48s linear infinite;
+}
+
+/* Subtle grain */
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.04;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.6) 1px, transparent 1px);
+  background-size: 3px 3px;
+  mix-blend-mode: multiply;
+}
+
+/* Custom cursor halo */
+.cursor-soft {
+  cursor:
+    url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"><circle cx="11" cy="11" r="6" fill="black"/></svg>')
+      11 11,
+    auto;
+}
+
+/* Scroll bar polish */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.18);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* ===== Scroll progress bar ===== */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: #000;
+  z-index: 999;
+  transform-origin: left;
+  /* transition removed — Framer Motion useSpring handles smooth interpolation */
+}
+
+/* ===== Button ripple ===== */
+.btn-pill {
+  position: relative;
+  overflow: hidden;
+}
+.btn-pill::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.22) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+.btn-pill:active::after {
+  opacity: 1;
+  transition: none;
+}
+
+/* ===== Focus visible states (accessibility) ===== */
+:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* ===== Smooth scroll — handled by Lenis; native smooth-scroll disabled to avoid conflicts ===== */
+html {
+  scroll-behavior: auto;
+}
+
+/* ===== snj-card hover fix (beats fade-up.is-visible specificity) ===== */
+.fade-up.snj-card:hover {
+  transform: translateY(-4px) scale(1);
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Touch target minimum for interactive controls ===== */
+button:not([class*="p-"]):not([class*="w-"]):not([class*="h-"]),
+[role="button"] {
+  min-height: 44px;
+}
+
+
+/* Marquee */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+.marquee {
+  animation: marquee 48s linear infinite;
+}
+
+/* ===== SNJ Redesign — palette + motion ===== */
+:root {
+  --snj-cream: #faf7f2;
+  --snj-navy: #0b2a33;
+  --snj-navy-2: #0e3a44;
+  --snj-teal: #1f8a80;
+  --snj-teal-soft: #2fb0a3;
+  --snj-gold: #c9a24b;
+  --snj-ink: #1c2b2d;
+}
+
+/* Slow floating orbs */
+@keyframes snjFloat {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(0, -38px, 0) scale(1.08); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes snjFloat2 {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  50%  { transform: translate3d(26px, 30px, 0) scale(1.12); }
+  100% { transform: translate3d(0, 0, 0) scale(1); }
+}
+.snj-orb { will-change: transform; filter: blur(30px); border-radius: 9999px; }
+
+/* Rotating SNJ wheel */
+@keyframes snjSpin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes snjSpinRev { from { transform: rotate(0deg); } to { transform: rotate(-360deg); } }
+.snj-wheel-ring { animation: snjSpin 60s linear infinite; will-change: transform; }
+.snj-wheel-node { animation: snjSpinRev 60s linear infinite; will-change: transform; }
+.snj-wheel-group:hover .snj-wheel-ring,
+.snj-wheel-group:hover .snj-wheel-node { animation-play-state: paused; }
+
+/* Gentle pulse glow */
+@keyframes snjGlow {
+  0%, 100% { opacity: 0.55; transform: scale(1); }
+  50%      { opacity: 0.9; transform: scale(1.05); }
+}
+.snj-glow { animation: snjGlow 6s ease-in-out infinite; }
+
+/* Kinetic hero line mask reveal */
+.snj-mask { overflow: hidden; display: block; }
+
+/* Dotted orbit ring */
+.snj-orbit {
+  border: 1px dashed rgba(255,255,255,0.16);
+  border-radius: 9999px;
+}

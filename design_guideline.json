@@ -1,0 +1,96 @@
+{
+  "theme": "Light",
+  "archetype": "1 (Organic & Earthy)",
+  "vibe": "Calm, cinematic, futuristic, emotional, healing, spirituality, premium healthcare",
+  "typography": {
+    "headings": {
+      "family": "Instrument Serif, serif",
+      "weights": ["400", "400italic"],
+      "usage": "Logo, hero headline, section titles."
+    },
+    "body": {
+      "family": "Inter, sans-serif",
+      "weights": ["300", "400", "500", "600"],
+      "usage": "Navigation, body copy, buttons, small labels."
+    }
+  },
+  "colors": {
+    "background": "#FFFFFF",
+    "text_primary": "#000000",
+    "text_secondary": "#6F6F6F",
+    "accent": "rgba(0, 0, 0, 0.06)",
+    "button_bg": "#000000",
+    "button_text": "#FFFFFF"
+  },
+  "layout": {
+    "max_width": "max-w-7xl",
+    "spacing": "Generous spacing, py-24 to py-32 for main sections",
+    "grid_system": "Bento grid with generous gap (gap-8 or gap-12) for 4D Framework and Programme sections"
+  },
+  "components": {
+    "navigation": {
+      "style": "Transparent floating, centered, glassmorphism (backdrop-blur-md bg-white/40), max-width 1280px.",
+      "items": ["Home", "About", "Programme", "Science", "People", "Explore", "Get Involved", "Contact"],
+      "cta": "Begin Journey",
+      "behavior": "Scroll-aware, slightly opaque on scroll down, fade-down entrance."
+    },
+    "hero": {
+      "type": "Fullscreen Video Loop",
+      "overlay": "Soft blur on edges, slight brightness reduction, bg-gradient-to-b from-transparent via-white/20 to-white",
+      "headline_classes": "font-serif text-[72px] md:text-[100px] lg:text-[140px] leading-[0.95] tracking-[-0.025em]",
+      "bilingual_support": true,
+      "cta_style": "Large rounded-full pill, bg-black text-white px-8 py-4 hover:-translate-y-1 hover:scale-[1.03] shadow-[0_8px_32px_rgba(0,0,0,0.12)] transition-all duration-500"
+    },
+    "whatsapp_button": {
+      "style": "Persistent, floating bottom-right, z-50, rounded-full, high contrast black or dark grey to match minimal palette."
+    },
+    "cards": {
+      "style": "Flat background or purely white, 1px subtle border (border-black/5), no shadow. Hover: slight lift (-translate-y-1) and subtle shadow."
+    }
+  },
+  "motion": {
+    "fade_up": "600-900ms ease-out, no bouncing. Opacity 0 to 1, translateY 20px to 0.",
+    "hero_scroll": "Slowly scales up content, video moves in parallax (slower than content).",
+    "nav_scroll": "Becomes slightly opaque/blurred as user scrolls past hero."
+  },
+  "sections_required": [
+    "Home (Hero with 4D Framework and 2H-2R-2L models)",
+    "About (ISKCON Navi Mumbai, BVCE, BAHRC, Swaayu Cancer Care Centre, SNJ origin)",
+    "Programme (HCHR 4-session half-day retreat, schedule, free-of-charge)",
+    "Science (NCCN/ASCO/ESMO/SIO guidelines badges, FACT-G/HADS/FACIT/PSQI outcome tools)",
+    "People (Faculty/facilitators photo+bio grid)",
+    "Explore (Media gallery, testimonials, brochures)",
+    "Get Involved (Attend/Volunteer/Donate cards)",
+    "Contact (Address, map embed, WhatsApp)"
+  ],
+  "media": {
+    "hero_video": "https://assets.mixkit.co/videos/preview/mixkit-sun-rays-in-a-lush-forest-4113-large.mp4",
+    "lotus_imagery": [
+      "https://images.unsplash.com/photo-1547100037-3308164630f2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwyfHxsb3R1cyUyMGZsb3dlciUyMG1vcm5pbmclMjBsaWdodHxlbnwwfHx8fDE3ODI3Mjg4NTF8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1547100037-194ff69f5dcb?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHwxfHxsb3R1cyUyMGZsb3dlciUyMG1vcm5pbmclMjBsaWdodHxlbnwwfHx8fDE3ODI3Mjg4NTF8MA&ixlib=rb-4.1.0&q=85"
+    ],
+    "nature_mist": [
+      "https://images.unsplash.com/photo-1773211342413-919716831102",
+      "https://images.unsplash.com/photo-1600340053706-32d1278206ef?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODl8MHwxfHNlYXJjaHwxfHxzdW5saWdodCUyMHRocm91Z2glMjB0cmVlc3xlbnwwfHx8fDE3ODI1MDc5MzR8MA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1758999422230-3c6269bbc349"
+    ],
+    "people_doctors": [
+      "https://images.unsplash.com/photo-1758691461935-202e2ef6b69f",
+      "https://images.unsplash.com/photo-1758691462126-2ee47c8bf9e7"
+    ]
+  },
+  "instructions_to_main_agent": [
+    "Ensure React CRA, Tailwind CSS, FastAPI, MongoDB are used as specified.",
+    "Do NOT use TypeScript or Vite; stick to .js/.jsx.",
+    "Load Google Fonts: Instrument Serif and Inter.",
+    "All interactive elements MUST have a data-testid attribute in kebab-case based on their role.",
+    "Use 'lucide-react' for icons (e.g., WhatsApp, Arrow, Quotes).",
+    "For the hero video loop, strictly implement requestAnimationFrame for fading logic (0.5s in/out) without flashing.",
+    "Headings must use Instrument Serif, and body/buttons must use Inter.",
+    "Implement scroll-triggered fade-ups (600-900ms ease-out) using framer-motion for all sections.",
+    "For the hero headline 'Healing Beyond Medicine. Living Beyond Cancer.', italicize 'Medicine' and 'Cancer' in text-[#6F6F6F] using the <i> or <em> tag.",
+    "Display 4D Framework (Body, Mind, Intelligence, Soul) and 2H-2R-2L wellbeing model with bento-style cards using a 1px border of rgba(0,0,0,0.06).",
+    "Science section should cleanly display the mentioned guideline acronyms (NCCN, ASCO, ESMO, SIO) and outcome tools in a premium, airy grid.",
+    "Create placeholders or simple divs for map embeds in the Contact section.",
+    "Build a multi-page routing structure for Home, About, Programme, Science, People, Explore, Get Involved, Contact."
+  ]
