@@ -1,0 +1,254 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* =============================================================
+   Swastha NavJeevan — luxury cancer wellness design system
+   Palette: deep navy · teal · gold · cream
+   Typography: Cormorant Garamond (display) + DM Sans (body)
+   ============================================================= */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Brand tokens */
+  --color-navy: var(--navy);
+  --color-navy-deep: var(--navy-deep);
+  --color-teal: var(--teal);
+  --color-teal-bright: var(--teal-bright);
+  --color-gold: var(--gold);
+  --color-gold-bright: var(--gold-bright);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", system-ui, sans-serif;
+
+  --shadow-elegant: 0 20px 60px oklch(0.2 0.05 260 / 0.18);
+  --shadow-soft: 0 4px 24px oklch(0.2 0.05 260 / 0.08);
+  --shadow-gold: 0 10px 30px oklch(0.72 0.15 75 / 0.35);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Brochure palette */
+  --navy-deep: oklch(0.22 0.06 264);   /* #0D1F3C */
+  --navy: oklch(0.33 0.09 265);        /* #1B3A6B */
+  --teal: oklch(0.48 0.09 190);        /* #0A6E6E */
+  --teal-bright: oklch(0.58 0.11 190); /* #0D8F8F */
+  --gold: oklch(0.68 0.14 75);         /* #C8922A */
+  --gold-bright: oklch(0.82 0.13 82);  /* #E8B84B */
+  --cream: oklch(0.97 0.012 80);       /* #FAF7F2 */
+  --ink: oklch(0.18 0.03 264);
+
+  /* Shadcn semantic mapping */
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: oklch(1 0 0);
+  --card-foreground: var(--ink);
+  --popover: oklch(1 0 0);
+  --popover-foreground: var(--ink);
+  --primary: var(--navy);
+  --primary-foreground: oklch(0.98 0.005 80);
+  --secondary: oklch(0.95 0.01 260);
+  --secondary-foreground: var(--navy);
+  --muted: oklch(0.95 0.008 260);
+  --muted-foreground: oklch(0.5 0.03 260);
+  --accent: var(--gold);
+  --accent-foreground: oklch(0.15 0.02 80);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0.005 80);
+  --border: oklch(0.9 0.01 260);
+  --input: oklch(0.92 0.01 260);
+  --ring: var(--gold);
+}
+
+.dark {
+  --background: var(--navy-deep);
+  --foreground: oklch(0.98 0.005 80);
+  --card: oklch(0.27 0.05 264);
+  --card-foreground: oklch(0.98 0.005 80);
+  --popover: oklch(0.27 0.05 264);
+  --popover-foreground: oklch(0.98 0.005 80);
+  --primary: var(--gold);
+  --primary-foreground: var(--navy-deep);
+  --secondary: oklch(0.32 0.05 264);
+  --secondary-foreground: oklch(0.98 0.005 80);
+  --muted: oklch(0.32 0.05 264);
+  --muted-foreground: oklch(0.7 0.03 260);
+  --accent: var(--gold);
+  --accent-foreground: var(--navy-deep);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: var(--gold);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+}
+
+/* ── Reusable utilities ────────────────────────────────────── */
+@utility container-wide {
+  max-width: 76rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+@utility container-narrow {
+  max-width: 52rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+@utility eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+}
+@utility eyebrow-gold {
+  color: var(--color-gold);
+  background: color-mix(in oklab, var(--color-gold) 12%, transparent);
+}
+@utility eyebrow-teal {
+  color: var(--color-teal);
+  background: color-mix(in oklab, var(--color-teal) 12%, transparent);
+}
+@utility eyebrow-navy {
+  color: var(--color-navy);
+  background: color-mix(in oklab, var(--color-navy) 10%, transparent);
+}
+@utility eyebrow-onDark {
+  color: var(--color-gold-bright);
+  background: color-mix(in oklab, var(--color-gold-bright) 15%, transparent);
+}
+@utility display-serif {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+@utility btn-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: white;
+  background: linear-gradient(135deg, var(--color-gold), oklch(0.6 0.15 68));
+  box-shadow: var(--shadow-gold);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+}
+@utility btn-gold-hover {
+  &:hover { transform: translateY(-2px); filter: brightness(1.05); }
+}
+@utility btn-outline-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: white;
+  border: 1.5px solid oklch(1 0 0 / 0.55);
+  background: transparent;
+  transition: all 0.25s ease;
+}
+@utility btn-outline-navy {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--color-navy);
+  border: 1.5px solid var(--color-navy);
+  background: transparent;
+  transition: all 0.25s ease;
+}
+@utility gold-underline {
+  background-image: linear-gradient(90deg, var(--color-gold), var(--color-gold-bright));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+@utility hairline {
+  border-top: 1px solid color-mix(in oklab, currentColor 15%, transparent);
+}
+
+/* Orbs / glow */
+@utility orb {
+  position: absolute;
+  border-radius: 9999px;
+  pointer-events: none;
+  filter: blur(20px);
+}
+
+/* Reveal animation */
+@keyframes riseIn {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes floatOrb {
+  0%, 100% { transform: translate3d(0,0,0) scale(1); }
+  50%      { transform: translate3d(0,-24px,0) scale(1.04); }
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+@utility animate-rise { animation: riseIn 0.9s ease-out both; }
+@utility animate-orb-float { animation: floatOrb 9s ease-in-out infinite; }
+
+/* Card lift */
+@utility lift {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  &:hover { transform: translateY(-6px); box-shadow: var(--shadow-elegant); }
+}
