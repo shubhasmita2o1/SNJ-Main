@@ -1,9 +1,52 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import heroImg from "@/assets/Gemini_Generated_Image_q9h3qoq9h3qoq9h3.png";
 import ctaLamp from "@/assets/cta-lamp.jpg";
 import { FourDShowcase, dimensions } from "@/components/site/FourDShowcase";
 import { Section, SectionTitle } from "@/components/site/Section";
 import { ArrowRight, Heart, Shield, Sparkles, Users } from "lucide-react";
+
+const heroRotatingLines = [
+  "Medicine heals the tumour. We heal the whole person.",
+  "Healthy New Life",
+  "Resilience • Longevity • Happiness",
+  "Four Sessions. One Complete Healing.",
+  "A New Life, Not Just a Treated Tumour.",
+  "Body • Mind • Intelligence • Soul",
+  "Evidence-Based Integrative Oncology",
+  "Healing Beyond Medicine",
+  "Whole Person. Whole Healing.",
+  "Transforming Cancer Care Through Holistic Healing.",
+];
+
+function HeroRotatingLine() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((prev) => (prev + 1) % heroRotatingLines.length);
+    }, 3200);
+    return () => clearInterval(id);
+  }, []);
+
+  return (
+    <div className="mt-3 min-h-[2.4em] sm:min-h-[1.6em]">
+      <AnimatePresence mode="wait">
+        <motion.p
+          key={index}
+          initial={{ opacity: 0, y: 8 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -8 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="display-serif italic text-2xl sm:text-3xl lg:text-4xl text-[var(--color-gold-bright)] font-light"
+        >
+          {heroRotatingLines[index]}
+        </motion.p>
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -46,24 +89,31 @@ function Home() {
         <div className="orb animate-orb-float w-[420px] h-[420px] bottom-0 left-4 bg-[var(--color-gold)]/25" style={{ animationDelay: "-3s" }} />
 
         <div className="container-wide relative z-10 animate-rise">
-          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[11px] font-semibold tracking-[0.22em] uppercase text-[var(--color-gold-bright)] mb-6">
-            <span>BAHRC</span>
-            <span className="w-1 h-1 rounded-full bg-[var(--color-gold-bright)]/60" />
-            <span>ISKCON Navi Mumbai</span>
-            <span className="w-1 h-1 rounded-full bg-[var(--color-gold-bright)]/60" />
-            <span>Open to Every Faith</span>
+          <div className="text-[11px] font-semibold tracking-[0.22em] uppercase text-[var(--color-gold-bright)] mb-6">
+            Bhaktivedanta Ayurvedic Healing &amp; Research Centre
           </div>
 
           <h1 className="display-serif text-5xl sm:text-6xl lg:text-8xl leading-[1] max-w-5xl">
-            Healing Beyond Medicine
-            <span className="block font-semibold gold-underline mt-2">Swastha NavJeevan</span>
+            Swastha NavJeevan
           </h1>
+          <HeroRotatingLine />
+
+          <div className="mt-5 flex items-center gap-3 text-sm sm:text-base font-medium tracking-wide text-white/85">
+            <span>Resilience</span>
+            <span className="w-1 h-1 rounded-full bg-[var(--color-gold-bright)]/70" />
+            <span>Longevity</span>
+            <span className="w-1 h-1 rounded-full bg-[var(--color-gold-bright)]/70" />
+            <span>Happiness</span>
+          </div>
 
           <p className="mt-7 max-w-2xl text-base sm:text-xl text-white/80 leading-relaxed font-light">
-            India's first integrative oncology programme addressing all four dimensions of the
-            cancer patient — <em>Body, Mind, Intelligence, and Soul</em> — simultaneously.
-            Evidence-based. Side-effect free. <strong className="text-white"> Free for all.</strong>
+            A holistic wellness initiative that cares not just the body, but the whole human
+            being — uniting modern medicine, AYUSH, and timeless Vedic wisdom.
           </p>
+
+          <div className="mt-5 text-xs sm:text-sm font-semibold tracking-[0.3em] uppercase text-white/70">
+            Body · Mind · Intelligence · Soul
+          </div>
 
           <div className="mt-8 flex flex-wrap gap-2">
             {[

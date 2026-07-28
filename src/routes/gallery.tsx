@@ -18,7 +18,7 @@ const pressCoverage = [
   { title: "Times of India", date: "1 June 2026", desc: "ISKCON Navi Mumbai launches free integrative cancer healing programme", link: "#" },
   { title: "Maharashtra Times", date: "3 June 2026", desc: "HCHR: Where ancient wisdom meets modern oncology", link: "#" },
 ];
-
+ 
 const testimonials = [
   {
     name: "Mrs. Meena Sharma",

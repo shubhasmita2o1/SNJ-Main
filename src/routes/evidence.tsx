@@ -13,7 +13,7 @@ const citations = [
   { c: "teal", text: "Riley J et al. Craft in cancer care — <em>Palliat Med</em> RCT · pain ↓ · nausea ↓ during chemotherapy" },
   { c: "gold", text: "Bratman GN et al. Nature therapy — <em>PNAS</em> 2015 · prefrontal rumination ↓ · Stanford study" },
 ];
-
+ 
 const roadmap = [
   { year: "Phase 0", title: "Programme launch", desc: "Inaugural cohort of 200+ patients at BAHRC. Baseline outcome data captured." },
   { year: "Phase I", title: "Observational study", desc: "Prospective single-arm study across three cohorts. QoL, distress and biomarker endpoints." },

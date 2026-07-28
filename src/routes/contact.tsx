@@ -10,7 +10,7 @@ export const Route = createFileRoute("/contact")({
       { name: "description", content: "Reach out to the Swastha NavJeevan team at BAHRC, ISKCON Navi Mumbai." },
     ],
   }),
-  component: Contact,
+  component: Contact, 
 });
 
 function Contact() {

@@ -4,7 +4,7 @@ import { PageHero } from "@/components/site/PageHero";
 import { Section, SectionTitle } from "@/components/site/Section";
 import { Check, Calendar, Heart } from "lucide-react";
 
-const days = [
+const days = [ 
   // Week 1 - Body Awareness
   { day: 1, week: 1, title: "Morning stretch — 10 min gentle movement", category: "Body" },
   { day: 2, week: 1, title: "Diaphragmatic breathing — 5 min", category: "Body" },
