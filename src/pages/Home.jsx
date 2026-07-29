@@ -103,7 +103,7 @@ export default function Home() {
           aria-hidden="true"
         />
 
-        <Container className="relative z-10 pt-36 pb-24 md:pt-44 md:pb-28">
+        <Container className="relative z-10 pt-32 pb-20 md:pt-40 md:pb-24">
           <div className="grid grid-cols-1 items-center gap-14 lg:grid-cols-12 lg:gap-8">
             <motion.div
               className="lg:col-span-6"
@@ -163,7 +163,7 @@ export default function Home() {
             </motion.div>
 
          <motion.div
-              className="lg:col-span-6 lg:-mt-10"
+              className="lg:col-span-6"
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1], delay: 0.3 }}
@@ -199,7 +199,7 @@ export default function Home() {
 
       {/* ============== MISSION & VISION + FOUR PILLARS ============== */}
       <section
-        className="relative overflow-hidden pb-[72px] pt-20 md:pt-24"
+        className="relative overflow-hidden py-20 md:py-24"
         data-testid="section-mission-vision"
         style={{
           background:
@@ -237,7 +237,7 @@ export default function Home() {
           </div>
 
           {/* ---------- Vision & Mission premium cards (48px below title) ---------- */}
-          <div className="mt-12 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-7">
+          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2 lg:gap-7">
             {/* Mission */}
             <Reveal>
               <article
@@ -324,10 +324,10 @@ export default function Home() {
           </div>
 
           {/* ---------- Four Pillars gallery (56px below cards) ---------- */}
-          <div className="mt-14" data-testid="section-pillars">
+          <div className="mt-12" data-testid="section-pillars">
             {/* connector accent */}
             <Reveal>
-              <div className="mb-8 flex items-center gap-4" aria-hidden="true">
+              <div className="mb-6 flex items-center gap-4" aria-hidden="true">
                 <span className="h-px flex-1 bg-gradient-to-r from-transparent via-[#1c2b2d]/12 to-transparent" />
                 <span className="h-1.5 w-1.5 rounded-full bg-[#c9a24b]" />
                 <span className="h-px flex-1 bg-gradient-to-r from-transparent via-[#1c2b2d]/12 to-transparent" />
@@ -359,14 +359,13 @@ export default function Home() {
             >
               {PILLAR_TILES.map((t) => (
                 <motion.figure key={t.key} variants={galleryTile} data-testid={`pillar-tile-${t.key}`}>
-                  <div className="group relative aspect-[3/4] overflow-hidden rounded-[18px] bg-[#0b2a33] shadow-[0_14px_40px_rgba(11,42,51,0.1)] transition-[transform,box-shadow] duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] will-change-transform hover:-translate-y-1 hover:shadow-[0_28px_60px_rgba(11,42,51,0.2)]">
-                    <img
-                      src={t.img}
-                      alt={`${t.label} — ${t.note}`}
-                      loading="lazy"
-                      className="h-full w-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-[1.025]"
-                    />
-                    {/* desktop/tablet: hover-reveal overlay caption */}
+              <div className="group relative aspect-[5/4] overflow-hidden rounded-[18px] bg-[#0b2a33] shadow-[0_14px_40px_rgba(11,42,51,0.1)] transition-[transform,box-shadow] duration-[600ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] will-change-transform hover:-translate-y-1 hover:shadow-[0_28px_60px_rgba(11,42,51,0.2)]">
+  <img
+    src={t.img}
+    alt={`${t.label} — ${t.note}`}
+    loading="lazy"
+    className="h-full w-full object-cover object-center transition-transform duration-[900ms] ease-[cubic-bezier(0.25,0.1,0.25,1)] group-hover:scale-[1.025]"
+  />
                     <div
                       className="pointer-events-none absolute inset-0 hidden bg-gradient-to-t from-[#07171b]/75 via-[#07171b]/15 to-transparent opacity-0 transition-opacity duration-[600ms] ease-out group-hover:opacity-100 sm:block"
                       aria-hidden="true"
@@ -390,7 +389,7 @@ export default function Home() {
 
       {/* ============== INAUGURATION ============== */}
       <section
-        className="relative overflow-hidden py-24 md:py-32"
+        className="relative overflow-hidden py-20 md:py-24"
         style={{ background: "#0b2a33" }}
         data-testid="section-inauguration"
       >
@@ -435,7 +434,7 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <div className="mt-14 grid grid-cols-1 gap-5 lg:grid-cols-3">
+          <div className="mt-12 grid grid-cols-1 gap-5 lg:grid-cols-3">
             <Reveal className="lg:col-span-2">
               <figure className="group relative h-[300px] overflow-hidden rounded-[24px] border border-white/10 md:h-[440px]">
                 <img
@@ -476,7 +475,7 @@ export default function Home() {
           </div>
 
           <Reveal delay={1}>
-            <blockquote className="mx-auto mt-20 max-w-4xl text-center">
+            <blockquote className="mx-auto mt-12 max-w-4xl text-center">
               <Quote className="mx-auto h-9 w-9 text-[#c9a24b]/70" strokeWidth={1.1} aria-hidden="true" />
               <p className="mt-7 font-serif text-[26px] leading-[1.35] text-white md:text-[42px]">
                 "Modern medicine has given us cures — but healing also needs humanity, faith and

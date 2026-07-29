@@ -7,7 +7,7 @@ export const Footer = () => {
   const { t } = useTranslation();
 
   return (
-    <footer className="border-t border-black/5 mt-24" data-testid="site-footer">
+    <footer className="border-t border-black/5" data-testid="site-footer">
       <Container className="py-16">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10">
           <div className="md:col-span-5">

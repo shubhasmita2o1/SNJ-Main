@@ -16,7 +16,7 @@ const DIMENSIONS = [
 ];
 
 export default function SNJWheel() {
-  const R = 44; // radius in %
+  const R = 36; // radius in %
 
   return (
     <div
@@ -35,8 +35,8 @@ export default function SNJWheel() {
       />
 
       {/* Static dotted orbits */}
-      <div className="snj-orbit absolute inset-[4%]" aria-hidden="true" />
-      <div className="snj-orbit absolute inset-[20%] opacity-60" aria-hidden="true" />
+      <div className="snj-orbit absolute inset-[14%]" aria-hidden="true" />
+      {/* <div className="snj-orbit absolute inset-[20%] opacity-60" aria-hidden="true" /> */}
 
       {/* Rotating ring with nodes */}
       <div className="snj-wheel-ring absolute inset-0">
